@@ -1,10 +1,7 @@
 class Solution {
     public String reverse(String s){
-        StringBuilder revStr = new StringBuilder();
-        for(int i=s.length()-1; i>=0; i--){
-            revStr = revStr.append(s.charAt(i));
-        }
-        return revStr.toString();
+        StringBuilder revStr = new StringBuilder(s);
+        return revStr.reverse().toString();
     }
     public int maximumNumberOfStringPairs(String[] words) {
         HashSet<String> set = new HashSet<>();
@@ -12,6 +9,7 @@ class Solution {
         for(int i=0; i< words.length; i++){
             if(set.contains(reverse(words[i]))){
                 count++;
+                set.remove(words[i]);
             }else{
                 set.add(words[i]);
             }
