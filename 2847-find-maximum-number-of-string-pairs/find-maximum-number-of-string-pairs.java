@@ -9,7 +9,7 @@ class Solution {
         for(int i=0; i< words.length; i++){
             if(set.contains(reverse(words[i]))){
                 count++;
-                set.remove(words[i]);
+                set.remove(words[i]); // if the string containse duplicate values
             }else{
                 set.add(words[i]);
             }
